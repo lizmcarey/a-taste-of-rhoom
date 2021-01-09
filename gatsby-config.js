@@ -1,15 +1,21 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `A Taste of Rhoom`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Leonard & Liz`,
+      summary: `two people trapped in quarantine together`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A running record of our favorite quarantine recipes`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `kylemathews`,
+      instagram: `@lizcarey13`,
     },
+    menuLinks: [
+      {
+        name: 'About',
+        link:'/about'
+      }
+    ]
   },
   plugins: [
     {
@@ -72,6 +78,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }

@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Burger from "../components/sidebar"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -11,7 +12,7 @@ const BlogIndex = ({ data, location }) => {
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout >
         <SEO title="All posts" />
         <Bio />
         <p>
@@ -24,9 +25,10 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout >
       <SEO title="All posts" />
-      <Bio />
+      <h1> {siteTitle} </h1>
+      <h2> Recent recipes: </h2>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -70,6 +72,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+         menuLinks {
+              name
+              link
+            }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
