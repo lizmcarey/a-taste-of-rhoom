@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@fontsource/lato": "^4.1.0",
     "@fontsource/raleway": "^4.1.0",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.5.0",
